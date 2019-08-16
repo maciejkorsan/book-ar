@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Site title</title>
+    <meta name="description" content="Description" />
+
+    <!-- Title -->
+    <meta property="og:title" content="" />
+    <!-- OPTIONAL description. 2-4 sentences. -->
+    <meta property="og:description" content="" />
+    <!-- full url with http(s) ie. https://maciejkorsan.github.io/my-repo/ -->
+    <meta property="og:url" content="" />
+    <!-- full url to the image with http(s) ie. https://maciejkorsan.github.io/my-repo/assets/img/fb.png. Facebook suggests at least 1200 x 630. -->
+    <meta property="og:image" content="https://maciejkorsan.com/wtf-gulp-starter/assets/img/cover.png" />
+    <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
+
+    <script src="assets/js/arjs.js"> </script>
+    <link rel="manifest" href="manifest.json" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <link
+      rel="apple-touch-icon"
+      sizes="192x192"
+      href="assets/pwa/icons/icon-192x192.png"
+    />
+
+    <link
+      rel="icon"
+      type="image/png"
+      href="assets/pwa/icons/icon-192x192.png"
+    />
+
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+  <body>
+    <a-scene embedded arjs='sourceType: webcam;'>
+
+    <a-marker preset='custom' type='pattern' url='assets/img/pattern-ar.patt'>
+  
+  
+      <a-entity position="0 1 0" rotation="90 0 0">
+        <a-entity position="0 0 0" scale="1 1 1" rotation="0 0 0" color="#000000" obj-model="obj: #hackbat-obj; mtl: #hackbat-mtl">
+          <a-animation attribute="rotation" fill="forwards" easing="linear" dur="15000" from="0 0 0" to="0 0 360" repeat="indefinite"></a-animation>
+        </a-entity>
+      </a-entity>
+  
+      <a-box position="0 0.25 0" rotation="0 0 0" width="1" depth="1" height="0.5" color="#333333"></a-box>
+      <a-text position="0 .30 0.53" class="timer--js" value="Time left: 23:59:59"></a-text>
+  
+    </a-marker>
+  
+    <a-entity camera></a-entity>
+  </a-scene>
+  
+  <div class="rotate">
+    ↩️
+    <span class="rotate__description">Please turn your device into landscape mode.</span>
+  </div>
+  
+
+    <script src="js/main.js"></script>
+  </body>
+</html>
